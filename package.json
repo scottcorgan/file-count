@@ -4,7 +4,7 @@
   "description": "Get the number of files in the given directory",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tape test.js"
   },
   "repository": {
     "type": "git",
@@ -23,10 +23,15 @@
   },
   "homepage": "https://github.com/scottcorgan/file-count",
   "dependencies": {
-    "all-files": "^1.0.2"
+    "walk": "^2.3.4"
   },
   "preferGlobal": "true",
   "bin": {
     "file-count": "bin/count"
+  },
+  "devDependencies": {
+    "mkdirp": "^0.5.0",
+    "rmdir": "^1.0.4",
+    "tape": "^3.0.0"
   }
 }

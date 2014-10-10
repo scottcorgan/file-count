@@ -1,12 +1,21 @@
 #!/usr/bin/env node
 
+var path = require('path');
 var count = require('../');
 var dir = process.argv.splice(2)[0];
+
+if (dir) {
+  dir = path.resolve(process.cwd(), dir);
+}
 
 if (!dir) {
   dir = process.cwd();
 }
 
-var numFiles = count(dir);
-
-process.stdout.write(numFiles.toString());
+var numFiles = count(dir, function (err, num) {
+  if (err) {
+    throw err;
+  }
+  
+  process.stdout.write(num.toString());
+});
