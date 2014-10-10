@@ -9,4 +9,4 @@ if (!dir) {
 
 var numFiles = count(dir);
 
-console.log(numFiles);
+process.stdout.write(numFiles.toString());
