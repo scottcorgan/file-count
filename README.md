@@ -21,8 +21,11 @@ npm install file-count --save
 
 ```js
 var fileCount = require('file-count');
-var count = fileCount(process.cwd());
 
-console.log(count);
+fileCount(process.cwd(), function (err, count) {
+  
+  console.log(count);
+});
+
 ```
 
